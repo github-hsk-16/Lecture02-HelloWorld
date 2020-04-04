@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Counter</string>
-    <string name="btn_increment">inc</string>
-    <string name="btn_decrement">dec</string>
-    <string name="btn_reset">reset</string>
+    <string name="btn_increment">Inc</string>
+    <string name="btn_decrement">Dec</string>
+    <string name="btn_reset">Reset</string>
 
     <string name="message" translatable="false">Have fun in Sports week</string>
 </resources>

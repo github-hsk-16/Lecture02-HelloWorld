@@ -16,34 +16,35 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     int counter = 0;
-    TextView tv;
+    TextView cv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tv = findViewById(R.id.textview);
-        tv.setText(counter + "");
+        cv = findViewById(R.id.counter_txt_view);
+        cv.setText(counter + "");  //Addition of "" to convert the counter into a string.
 
-        View.OnClickListener listener = new View.OnClickListener() {
+        View.OnClickListener inc_listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 counter++;
-                tv.setText(counter + "");
+                cv.setText(counter + "");
             }
         };
-        View.OnClickListener declistener = new View.OnClickListener() {
+        View.OnClickListener dec_listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 counter--;
-                tv.setText(counter + "");
+                cv.setText(counter + "");
             }
         };
-        Button btn_inc = findViewById(R.id.btn);
-        btn_inc.setOnClickListener(listener);
-        Button btn_dec = findViewById(R.id.btn2);
-        btn_dec.setOnClickListener(declistener);
+        Button btn_inc = findViewById(R.id.inc_btn);
+        btn_inc.setOnClickListener(inc_listener);
+        Button btn_dec = findViewById(R.id.dec_btn);
+        btn_dec.setOnClickListener(dec_listener);
+
         String message = getString(android.R.string.dialog_alert_title);
 
 //        AlertDialog ad = new AlertDialog.Builder(this)
@@ -52,8 +53,6 @@ public class MainActivity extends AppCompatActivity {
 //                .create();
 //        ad.show();
         Toast.makeText(this,"this is a string",Toast.LENGTH_LONG).show();
-
-
     }
 
     @Override
@@ -66,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==R.id.menu_reset){
             counter=0;
-            tv.setText(counter + "");
+            cv.setText(counter + "");
             return true;
         }
         else
